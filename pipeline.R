@@ -1,5 +1,3 @@
-# # Description: this script is the pipeline of ChIP-Seq experiment of Mst1-FoxO1-C/EBP-beta project from Sadoshima's Lab, Rutgers University
-# Author: Siavash Moghadami, Zahra Aryan
 # Last Modified: 6 Jan 2022
 ##################################################################################################################################################################################################
 # libraries
