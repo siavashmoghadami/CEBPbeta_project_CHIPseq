@@ -65,7 +65,7 @@ do
 	samtools index -@ $threads $filtered_sorted_bam/$sample_name"_sorted_filtered.bam"
 
 	# make bigWig files for visualization with bamCoverage
-#	bamCoverage -b $filtered_sorted_bam/$sample_name"_sorted_filtered.bam" -o $bamCoverage_out/$sample_name"_sorted_filtered.bw" --binSize 5 --normalizeUsing BPM --smoothLength 30 --extendReads 200 -p $threads --centerReads 2> $bamCoverage_out/$sample_name"_sorted_filtered.log"
+	bamCoverage -b $filtered_sorted_bam/$sample_name"_sorted_filtered.bam" -o $bamCoverage_out/$sample_name"_sorted_filtered.bw" --binSize 5 --normalizeUsing BPM --smoothLength 30 --extendReads 200 -p $threads --centerReads 2> $bamCoverage_out/$sample_name"_sorted_filtered.log"
 
 	# make computeMatrix with deepTools
 	computeMatrix reference-point --referencePoint TSS -b 1000 -a 1000 -R $project_dir/analysis/genomeRef/Mus_musculus.GRCm39.105.gtf.gz -S $bamCoverage_out/$sample_name"_sorted_filtered.bw" --skipZeros -o $computeMatrix_out/$sample_name"_sorted_filtered.gz" -p $threads --outFileSortedRegions $computeMatrix_out/$sample_name"_sorted_filtered.bed"
